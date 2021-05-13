@@ -7,14 +7,14 @@ class AdminSiteTests(TestCase):
     def setUp(self):
         self.client = Client()
         self.admin_user = get_user_model().objects.create_user(
-            email='test@test.test',
+            email='admin@test.test',
             password='test'
         )
         self.client.force_login(self.admin_user)
         self.user = get_user_model().objects.create_user(
             email='test@test.test',
             password='test',
-            name='Test use full name'
+            name='test'
         )
 
     def test_users_listed(self):
